@@ -1,0 +1,32 @@
+
+
+HomeAutomation (V 0.1)en-us4/13/19
+============================================
+Application ID
+42bfb9b4-1f83-4c01-87db-e2d879a5c60c
+
+User Settings
+User Information
+Authoring Key
+
+49fe969fec144c659b261a2afdd2898c (Reset) 
+
+Authoring Region
+
+westus
+
+Currently signed in Email
+
+auo.5187@gmail.com
+===================================================
+Application Information
+Application ID
+7b8468e2-fd09-4374-b2e9-ed7563bbecc9
+
+Display Name (Required)
+¹q±è±±¨îl
+
+Description 
+EQ_Control
+Culture  
+zh-cn
