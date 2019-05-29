@@ -1897,11 +1897,11 @@ namespace VoiceLuisApp
 			// aapt resource value: 0x7f0a0026
 			public const int FUNCTION = 2131361830;
 			
-			// aapt resource value: 0x7f0a0088
-			public const int LuisEntitiText = 2131361928;
+			// aapt resource value: 0x7f0a008e
+			public const int LuisEntitiText = 2131361934;
 			
-			// aapt resource value: 0x7f0a0087
-			public const int LuisIntentText = 2131361927;
+			// aapt resource value: 0x7f0a008d
+			public const int LuisIntentText = 2131361933;
 			
 			// aapt resource value: 0x7f0a0027
 			public const int META = 2131361831;
@@ -1993,17 +1993,29 @@ namespace VoiceLuisApp
 			// aapt resource value: 0x7f0a002f
 			public const int bottom = 2131361839;
 			
-			// aapt resource value: 0x7f0a0083
-			public const int btnCall_1F = 2131361923;
-			
 			// aapt resource value: 0x7f0a0084
-			public const int btnCall_2F = 2131361924;
+			public const int btnCall_1F = 2131361924;
 			
 			// aapt resource value: 0x7f0a0085
-			public const int btnCall_3F = 2131361925;
+			public const int btnCall_2F = 2131361925;
 			
 			// aapt resource value: 0x7f0a0086
-			public const int btnCall_4F = 2131361926;
+			public const int btnCall_3F = 2131361926;
+			
+			// aapt resource value: 0x7f0a0087
+			public const int btnCall_4F = 2131361927;
+			
+			// aapt resource value: 0x7f0a0089
+			public const int btnCall_5F = 2131361929;
+			
+			// aapt resource value: 0x7f0a008a
+			public const int btnCall_6F = 2131361930;
+			
+			// aapt resource value: 0x7f0a008b
+			public const int btnCall_7F = 2131361931;
+			
+			// aapt resource value: 0x7f0a008c
+			public const int btnCall_8F = 2131361932;
 			
 			// aapt resource value: 0x7f0a003e
 			public const int buttonPanel = 2131361854;
@@ -2095,8 +2107,11 @@ namespace VoiceLuisApp
 			// aapt resource value: 0x7f0a007d
 			public const int linearLayout2 = 2131361917;
 			
-			// aapt resource value: 0x7f0a0089
-			public const int linearLayout3 = 2131361929;
+			// aapt resource value: 0x7f0a0083
+			public const int linearLayout3 = 2131361923;
+			
+			// aapt resource value: 0x7f0a0088
+			public const int linearLayout4 = 2131361928;
 			
 			// aapt resource value: 0x7f0a000f
 			public const int listMode = 2131361807;
@@ -2107,8 +2122,8 @@ namespace VoiceLuisApp
 			// aapt resource value: 0x7f0a0070
 			public const int media_actions = 2131361904;
 			
-			// aapt resource value: 0x7f0a008a
-			public const int message = 2131361930;
+			// aapt resource value: 0x7f0a008f
+			public const int message = 2131361935;
 			
 			// aapt resource value: 0x7f0a0023
 			public const int middle = 2131361827;

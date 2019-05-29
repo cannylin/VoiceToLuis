@@ -27,10 +27,12 @@ namespace VoiceLuisApp
         public String REC_PLC { get; set; }
         public object Timer2 { get; private set; }
 
+        public int OnCallFloor;
+
         public string Write_SendMessage, m_SendMessage;
         public bool check1 = false,check2=false;
         public int PollCount=0,PLC_CMD_Index=0;
-        private Button btnCall_1F, btnCall_2F, btnCall_3F, btnCall_4F;
+        private Button btnCall_1F, btnCall_2F, btnCall_3F, btnCall_4F,btnCall_5F, btnCall_6F, btnCall_7F, btnCall_8F;
         private TextView LiftFloorTextView, LuisIntentResultTextView, LuisBox_EntitiTextView;
         protected override void OnCreate(Bundle bundle)
         {
@@ -43,6 +45,10 @@ namespace VoiceLuisApp
             btnCall_2F = FindViewById<Button>(Resource.Id.btnCall_2F);
             btnCall_3F = FindViewById<Button>(Resource.Id.btnCall_3F);
             btnCall_4F = FindViewById<Button>(Resource.Id.btnCall_4F);
+            btnCall_5F = FindViewById<Button>(Resource.Id.btnCall_5F);
+            btnCall_6F = FindViewById<Button>(Resource.Id.btnCall_6F);
+            btnCall_7F = FindViewById<Button>(Resource.Id.btnCall_7F);
+            btnCall_8F = FindViewById<Button>(Resource.Id.btnCall_8F);
 
             string LuisIntentResult = this.Intent.GetStringExtra("LuisIntentResult");
             string LuisEntitiResult = this.Intent.GetStringExtra("LuisEntitiResult");
@@ -59,42 +65,15 @@ namespace VoiceLuisApp
                 Write_SendMessage = "03FF000A4420000000000100"+ LiftControlCommand;
                 PLC_Connect(Write_SendMessage);
                }
-
-
-            PollingPLCTime(50, "Read");
-
-
-            btnCall_1F.Click += (sender,e)=>
-            { PollingPLCTime(50, "Write_1F");
-                PollingPLCTime(50, "Read");
-            };
-
-            btnCall_1F.Click += (sender, e) =>
-            { PollingPLCTime(50, "Write_2F");
-                PollingPLCTime(50, "Read");
-
-            };
-
-            btnCall_1F.Click += (sender, e) =>
-            { PollingPLCTime(50, "Write_3F");
-                PollingPLCTime(50, "Read");
-
-            };
-
-            btnCall_1F.Click += (sender, e) =>
-            { PollingPLCTime(50, "Write_4F");
-                PollingPLCTime(50, "Read");
-
-            };
-
-
-
-
-
-
-
-
-
+            PollingPLCTime(1, "Read");
+            btnCall_1F.Click += delegate { OnCallFloor = 1; };
+            btnCall_2F.Click += delegate { OnCallFloor = 2; };
+            btnCall_3F.Click += delegate { OnCallFloor = 3; };
+            btnCall_4F.Click += delegate { OnCallFloor = 4; };
+            btnCall_5F.Click += delegate { OnCallFloor = 5; };
+            btnCall_6F.Click += delegate { OnCallFloor = 6; };
+            btnCall_7F.Click += delegate { OnCallFloor = 7; };
+            btnCall_8F.Click += delegate { OnCallFloor = 8; };
 
         }
         public void PLC_Connect(string m_SendMessage)
@@ -166,6 +145,19 @@ namespace VoiceLuisApp
             {
 
 
+                if (OnCallFloor > 0)
+                {
+                    if (OnCallFloor == 1){ ReadWriteMode = "Write_1F";   }
+                    if (OnCallFloor == 2) { ReadWriteMode = "Write_2F";  }
+                    if (OnCallFloor == 3) { ReadWriteMode = "Write_3F";  }
+                    if (OnCallFloor == 4) { ReadWriteMode = "Write_4F";  }
+                    if (OnCallFloor == 5) { ReadWriteMode = "Write_5F";  }
+                    if (OnCallFloor == 6) { ReadWriteMode = "Write_6F";  }
+                    if (OnCallFloor == 7) { ReadWriteMode = "Write_7F";  }
+                    if (OnCallFloor == 8) { ReadWriteMode = "Write_8F";  }
+                }
+                else { ReadWriteMode = "Read"; }
+
                 switch (ReadWriteMode)
                       {
                        case "Read":
@@ -174,19 +166,42 @@ namespace VoiceLuisApp
                        case "Write_1F":
                         Write_SendMessage = "03FF000A4420000000000100" + "0001";
                         PLC_Connect(Write_SendMessage);
-                         break;
+                        OnCallFloor = 0;
+                        break;
                        case "Write_2F":
                         Write_SendMessage = "03FF000A4420000000000100" + "0002";
                         PLC_Connect(Write_SendMessage);
-                         break;
+                        OnCallFloor = 0;
+                        break;
                        case "Write_3F":
                         Write_SendMessage = "03FF000A4420000000000100" + "0003";
                         PLC_Connect(Write_SendMessage);
+                        OnCallFloor = 0;
                         break;
                         case "Write_4F":
                         Write_SendMessage = "03FF000A4420000000000100" + "0004";
                         PLC_Connect(Write_SendMessage);
-                         break;
+                        OnCallFloor = 0;
+                        break;
+                    case "Write_5F":
+                        Write_SendMessage = "03FF000A4420000000000100" + "0005";
+                        PLC_Connect(Write_SendMessage);
+                        OnCallFloor = 0;
+                        break;
+                    case "Write_6F":
+                        Write_SendMessage = "03FF000A4420000000000100" + "0006";
+                        PLC_Connect(Write_SendMessage);
+                        OnCallFloor = 0;
+                        break;
+                    case "Write_7F":
+                        Write_SendMessage = "03FF000A4420000000000100" + "0007";
+                        PLC_Connect(Write_SendMessage);
+                        break;
+                    case "Write_8F":
+                        Write_SendMessage = "03FF000A4420000000000100" + "0008";
+                        PLC_Connect(Write_SendMessage);
+                        OnCallFloor = 0;
+                        break;
                 };
 
 

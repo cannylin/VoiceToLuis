@@ -77,7 +77,7 @@
 		android:minHeight="15px"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:id="@+id/linearLayout2"
+		android:id="@+id/linearLayout3"
 		android:layout_weight="1">
 		
 		<Button
@@ -101,14 +101,44 @@
 			android:layout_height="wrap_content"
 			android:id="@+id/btnCall_4F" />
 
-	</LinearLayout>
+	     </LinearLayout>
+		
+		
+		<LinearLayout
+		android:orientation="horizontal"
+		android:minWidth="5px"
+		android:minHeight="5px"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/linearLayout4"
+		android:layout_weight="1">
+	
 
 
 
+		<Button
+			android:text="手動叫車5F"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/btnCall_5F" />
+				<Button
+			android:text="手動叫車6F"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/btnCall_6F" />
+				<Button
+			android:text="手動叫車7F"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/btnCall_7F" />
+						<Button
+			android:text="手動叫車8F"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/btnCall_8F" />
 
 
-
-
+		</LinearLayout>
 
 
 

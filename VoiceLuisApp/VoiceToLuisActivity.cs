@@ -239,7 +239,12 @@ namespace VoiceLuisApp
                                     case "一 樓": LiftControlFloor = "0001"; break;
                                     case "二 樓": LiftControlFloor = "0002"; break;
                                     case "三 樓": LiftControlFloor = "0003"; break;
-                                 };
+                                    case "四 樓": LiftControlFloor = "0004"; break;
+                                    case "五 樓": LiftControlFloor = "0005"; break;
+                                    case "六 樓": LiftControlFloor = "0006"; break;
+                                    case "七 樓": LiftControlFloor = "0007"; break;
+                                    case "八 樓": LiftControlFloor = "0008"; break;
+                                };
 
                                 if (LiftControlFloor != (null))
                                 {
